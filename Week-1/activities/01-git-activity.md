@@ -9,7 +9,7 @@ During training, one of the most common things you'll need to do is push or pull
 
 2. Open the repository creation page by clicking on the green button that says "New repository"
 
-3. This page will allow you to create your own repository, we just need to provide the right information to get it working. Select the box where it says "Repository name" and add in your name in the format "firstname-lastname". Verify that the "Owner" (just to left of that repository name) is our organization: "240408-JavaReactAWS".
+3. This page will allow you to create your own repository, we just need to provide the right information to get it working. Select the box where it says "Repository name" and add in your name in the format "firstname-lastname". Verify that the "Owner" (just to left of that repository name) is our organization: "Will-Java-FS".
 
 4. Verify the following settings: The repository is PUBLIC, not private. Optional, but if you like you can add a README file to initialize the repository. 
 
