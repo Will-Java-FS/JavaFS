@@ -1,10 +1,11 @@
 package com.revature.app;
 
 import io.javalin.Javalin;
+import io.javalin.core.JavalinConfig;
 
 public class App {
     public static void main(String[] args) {
-        Javalin app = Javalin.create( config ->config.enableCorsForAllOrigins());
+        Javalin app = Javalin.create(JavalinConfig::enableCorsForAllOrigins);
 
         //Establish our Routes
         establishRoutes(app);
