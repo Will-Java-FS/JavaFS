@@ -33,7 +33,7 @@ public class JDBCConnection {
                 String sql = String.format("SET search_path TO %s",schema);
                 Statement stmt =conn.createStatement();
                 stmt.execute(sql);
-                
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
