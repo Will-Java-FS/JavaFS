@@ -10,11 +10,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MovieRepoImpl {
+public class MovieRepoImpl implements MovieRepo {
 
     public static Connection conn = JDBCConnection.getConnection();
 
-
+    @Override
     public Movie getMovie(int id){
         String sql = "SELECT * FROM movie WHERE m_id = ?";
         try{
@@ -26,7 +26,9 @@ public class MovieRepoImpl {
         }
         return null;
     }
-    public List<Movie> getAllMovies(int id){
+
+    @Override
+    public List<Movie> getAllMovies(){
         String sql = "SELECT * FROM movies";
         try{
             PreparedStatement ps = conn.prepareStatement(sql);
