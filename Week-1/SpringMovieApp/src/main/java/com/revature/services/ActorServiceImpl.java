@@ -23,5 +23,10 @@ public class ActorServiceImpl implements ActorService {
         return ar.findAll();
     }
 
+    @Override
+    public Actor addActor(Actor a){
+        return ar.save(a);
+    }
+
 
 }

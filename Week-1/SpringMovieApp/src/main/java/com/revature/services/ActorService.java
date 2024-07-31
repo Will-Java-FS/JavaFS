@@ -9,5 +9,8 @@ public interface ActorService {
     //Trivial Services
     public Actor getActor(int id);
     public List<Actor> getAllActors();
+    public Actor addActor(Actor a);
+
+
 
 }
