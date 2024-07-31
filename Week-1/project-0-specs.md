@@ -1,6 +1,6 @@
 # Project 0: Item Management Application
 
-* Assigned Date: 6/31/2024
+* Assigned Date: 7/31/2024
 * Due Date: 8/06/2024
 
 # Description

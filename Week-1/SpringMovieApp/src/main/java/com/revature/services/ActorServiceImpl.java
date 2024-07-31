@@ -27,6 +27,10 @@ public class ActorServiceImpl implements ActorService {
     public Actor addActor(Actor a){
         return ar.save(a);
     }
+    @Override
+    public Actor updateActor(Actor change){
+        return ar.save(change);
+    }
 
 
 }

@@ -10,6 +10,7 @@ public interface ActorService {
     public Actor getActor(int id);
     public List<Actor> getAllActors();
     public Actor addActor(Actor a);
+    public Actor updateActor(Actor change);
 
 
 
