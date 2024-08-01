@@ -50,7 +50,7 @@ public class ArtistController {
     }
 
     /**
-     * POST mapping on the endpoint POST localhost:9000/artist should post a new artist and respond with the new artist
+     * POST mapping on the endpoint POST localhost:8080/artist should post a new artist and respond with the new artist
      * EG, POST localhost:9000/artist with the body
      * {
      *     "name":"picasso",
@@ -71,8 +71,8 @@ public class ArtistController {
         return artistService.saveArtist(artist);
     }
     /**
-     * GET mapping on the endpoint GET localhost:9000/artist?nationality={nationality} should respond with all artists
-     * with some nationality, EG GET localhost:9000/artist?nationality=spanish
+     * GET mapping on the endpoint GET localhost:8080/artist?nationality={nationality} should respond with all artists
+     * with some nationality, EG GET localhost:8080/artist?nationality=spanish
      * could respond with
      * {
      *     "id":1,
@@ -86,7 +86,7 @@ public class ArtistController {
         return artistService.getArtistsByNationality(nationality);
     }
     /**
-     * GET mapping on the endpoint GET localhost:9000/artist?name={name} should respond with all artists with some name,
+     * GET mapping on the endpoint GET localhost:8080/artist?name={name} should respond with all artists with some name,
      * EG GET localhost:9000/artist?name=kandinsky could respond with
      * [{
      *     "id":2,
