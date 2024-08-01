@@ -47,25 +47,45 @@ public class PaintingService {
         a.getPaintings().add(painting);
         return paintingRepository.save(painting);
     }
-
+    /**
+     * Leverage the paintingRepository to retrieve all Paintings from the Painting table.
+     * @return a list of all Painting entities
+     */
     public List<Painting> getAllPaintings(){
         return paintingRepository.findAll();
     }
-
+    /**
+     * Leverage the paintingRepository to retrieve the Artist of a Painting with a particular ID.
+     * @param paintingID
+     * @return the artist of a particular painting.
+     */
     public Artist getArtistOfPainting(long paintingID){
         Painting P1 =paintingRepository.findById(paintingID).get();
         Artist a1 = P1.getArtist();
         return a1;
     }
-
+    /**
+     * Retrieve all Paintings by their genre.
+     * @param genre
+     * @return a list of all Painting entities with a particular genre.
+     */
     public List<Painting> getAllPaintingsByGenre(String genre){
         return paintingRepository.findPaintingsByGenre(genre);
     }
-
+    /**
+     * Retrieve all Paintings by their title.
+     * @param title
+     * @return a list of all Painting entities with a particular title.
+     */
     public List<Painting> getAllPaintingsByTitle(String title){
         return paintingRepository.findPaintingsByTitle(title);
     }
-
+    /**
+     * Retrieve all Paintings by their title & genre.
+     * @param title
+     * @param genre
+     * @return a list of all Painting entities with a particular title & genre.
+     */
     public List<Painting> getAllPaintingsByTitleAndGenre(String title, String genre){
         return paintingRepository.findPaintingsByTitleAndGenre(title,genre);
     }
