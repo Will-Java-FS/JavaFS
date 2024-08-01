@@ -12,6 +12,6 @@ import java.util.List;
 public interface ArtistRepository extends JpaRepository<Artist,Long>{
     List<Artist> findArtistsByName(String name);
 
-    @Query("FROM Artist WHERE Nationality = :nationality")
-    List<Artist> findArtistsByNationality(@Param("nationality") String Nationality);
+/*    @Query("FROM Artist WHERE Nationality = :nationality")
+    List<Artist> findArtistsByNationality(@Param("nationality") String Nationality);*/
 }
