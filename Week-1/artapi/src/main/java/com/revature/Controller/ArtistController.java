@@ -27,10 +27,10 @@ public class ArtistController {
         return artistService.saveArtist(artist);
     }
 
-/*    @GetMapping(value = "artist",params ={"nationality"})
+    @GetMapping(value = "artist",params ={"nationality"})
     public List<Artist> getArtistByNationality(@RequestParam("nationality") String nationality){
         return artistService.getArtistsByNationality(nationality);
-    }*/
+    }
 
     @GetMapping(value = "artist",params={"name"})
     public List<Artist> getArtistByName(@RequestParam("name") String name){

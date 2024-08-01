@@ -29,9 +29,9 @@ public class ArtistService {
 
     }
 
-/*    public List<Artist> getArtistsByNationality(String nationality){
+    public List<Artist> getArtistsByNationality(String nationality){
         return artistRepository.findArtistsByNationality(nationality);
-    }*/
+    }
 
 
 
