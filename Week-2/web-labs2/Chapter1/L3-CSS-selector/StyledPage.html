@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+        <style>
+            /*
+            This exercise is all about learning the different ways to select HTML elements so that we may style them.
+            In this case, we are using embedded CSS - where a CSS file has been embedded into the HTML file. This is also
+            referred to as Internal CSS.
+
+            If you check out the HTML elements in the body, some elements have been provided class and id attributes.
+            This is so that the CSS styling can identify specific elements and apply styling rules to them.
+            Then, you will add on to this CSS stylesheet yourself.
+
+            You can read more about selectors here: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors
+             */
+            /*
+            Universal selector: select all elements, apply styling rules to them (set the font of the whole page to Monaco)
+            */
+            * {
+                font-family: Monaco, monospace;
+            }
+            /**
+            Id selector: select the element which has been given the id 'p1' in the html file
+             */
+            #p1 {
+                color:saddlebrown;
+            }
+            /**
+            Class selector: select all elements which have been given class 'class1' in the html file
+             */
+            .class1 {
+                color:olivedrab;
+            }
+            /*
+            Element selector: select all elements of a certain type
+            */
+            h1 {
+                color:rebeccapurple;
+            }
+            /**
+            TODO: make all elements with ID p2 a red color.
+             */
+            /**
+            TODO: make all elements with class class2 a blue color.
+             */
+            /**
+            TODO: make all h2 elements cyan.
+             */
+            /*
+            Selectors that are more specific get prioritized over selectors that are less specific.
+            Inline CSS (written as an attribute to an element) will always get prioritized over external & embedded CSS.
+
+            There are also quite a few other types of CSS selectors - such as sibling, attribute, grouping, child,
+            descendant - but investigating these in-depth is probably not worth your time.
+             */
+        </style>
+</head>
+<body>
+    <h1>CSS Selectors</h1>
+    <p>It is important to consider id and class attributes given to HTML elements, since they can lend important information to both CSS and JavaScript.
+    In this example, we will be using id and class attributes to apply styling changes to elements in CSS.
+    Check out the styling.css file.</p>
+    <div>
+      <h2>Sample elements:</h2>
+        <!-- id attribute provided to this element       -->
+      <p id = "p1">this item was selected with an id selector</p>
+        <!-- class attribute provided to these elements       -->
+      <p class = "class1">this item was selected with a class selector</p>
+      <p class = "class1">this item was selected with a class selector</p>
+      <p class = "class1">this item was selected with a class selector</p>
+    </div>
+      <h2>TODO:</h2>
+      <p id = "p2">this item should be red.</p>
+      <p class = "class2">this item should be blue.</p>
+      <p class = "class2">this item should be blue.</p>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">
+        https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors</a>
+</body>
+</html>

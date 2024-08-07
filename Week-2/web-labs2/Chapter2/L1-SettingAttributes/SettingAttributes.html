@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Setting Attributes</title>
+    <!-- external styling, the file is in this case located in the resources folder   -->
+    <link rel="stylesheet" href="../../resources/styling.css">
+</head>
+<body>
+  <h1>Setting Attributes</h1>
+  <p>You are already aware that JavaScript can be used to alter the InnerText of an element. Here we can demonstrate
+  that JavaScript can also be used to modify the attributes of an element - for instance, the image URL used in
+  an image element. This exercise also demonstrates the use of external JS files as well as an external stylesheet
+  for the first time.</p>
+  <p>Your goal will be to write the code in the linked JS file that will change the following image to display whatever
+  image URL is provided in the text input.</p>
+    <!-- image element that starts off with a non-image as its 'src' value (this will result in a broken image at the start)  -->
+  <img id = "image" src = "placeholder">
+  <br>
+    <!-- a very wide input box to accommodate long links -->
+  <input style = "min-width:800px" type = "text" id = "input">
+  <br>
+  <button id = "button">update the image</button>
+  <p>some example urls to use:</p>
+  <ul>
+      <li>https://ia801201.us.archive.org/14/items/Chrysanthemum_20160913/Chrysanthemum.jpg</li>
+      <li>https://ia601201.us.archive.org/14/items/Chrysanthemum_20160913/Hydrangeas.jpg</li>
+      <li>https://ia801201.us.archive.org/14/items/Chrysanthemum_20160913/Tulips.jpg</li>
+  </ul>
+  <!-- check out the linked JS file to complete the lab -->
+  <script src = "SettingAttributes.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Async Await</title>
+    <!-- external styling   -->
+    <link rel="stylesheet" href="/../../resources/styling.css">
+</head>
+<body>
+<h1>Async & Await</h1>
+<p>This exercise will demonstrate asynchronous programming with Async & Await for the first time. First, it is key to
+understand that JavaScript is limited to running a single thread at a time (most languages feature some form of
+multithreading, or the ability to handle multiple independent executions of code simultaneously). JavaScript also
+needs to handle many events from the user or from the web while maintaining a pleasant and responsive user experience -
+so, whenever JavaScript needs to wait for something to happen, such as waiting on a timer or on API calls, JavaScript
+allows other events to fire while it's waiting - to do this, the developer must write "async" methods that
+"await" for some operation to complete. "Async" and "await" are combined with the concept of Promises - which are values
+that take time to resolve and require waiting (usually when interacting with external systems such as the web)</p>
+<button id = "button">when clicking this button, this text should display "Success!". If you get [object Promise], you
+    haven't properly resolved the promise via async/await.</button>
+<p id = "text">click the button</p>
+<script src = "AsyncAwait.js"></script>
+</body>
+</html>

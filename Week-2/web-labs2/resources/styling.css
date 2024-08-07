@@ -1,0 +1,19 @@
+/*
+one of the great advantages of external stylesheets is that a single stylesheet can be applied to many files.
+this also means that changes to this stylesheet would be applied to all the labs that use it.
+ */
+
+/*
+Universal selector: select all elements, apply styling rules to them (set the font of the whole page to Monaco)
+ */
+* {
+    font-family: Monaco, monospace;
+}
+/*
+Element selector: select all elements of a certain type, apply styling rules to them (keep images from being too big
+for your screen)
+ */
+img {
+    max-width:20%;
+    height:auto;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Callback functions</title>
+    <!-- external styling, the file is in this case located in the resources folder   -->
+    <link rel="stylesheet" href="../../resources/styling.css">
+</head>
+<body>
+<h1>Array Methods & Callback Functions</h1>
+<p>This exercise will demonstrate the use of both common array methods (filter, map, foreach) and also provide an
+    explanation of callback functions. Callback functions are functions that are passed into another function
+    as a parameter, so that they may be executed later - in this case, the filter method takes in a function intended
+    to determine whether an item should be filtered, the map method takes in a function intended to determine what value
+    should overwrite the old value of the array, and the foreach method takes in a function intended to perform some
+    action for each item. In all of these cases, the additional function supplied to the method is a callback function.
+    </p>
+<p>
+By the way, why use both the terms function and method here? Functions are reusable blocks of code that exist
+independently of any Object, whereas methods are reusable blocks of code that belong to an Object. Arrays are
+technically objects.</p>
+<h2>Original array:</h2>
+<p id = "original">placeholder</p>
+<h2>After filtering (only items with spaces are kept):</h2>
+<p id = "afterFilter">placeholder</p>
+<h2>After mapping (all items converted to uppercase)</h2>
+<p id = "afterMap">placeholder</p>
+<h2>After forEach, check the console for console outpod for every name (open the console with f12 or right click /
+    developer tools)</h2>
+<p>These are not the only array methods. You may also encounter sort & reduce, which also work with callback functions.</p>
+<a href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array</a>
+<br>
+<a href = "https://developer.mozilla.org/en-US/docs/Glossary/Callback_function">
+    https://developer.mozilla.org/en-US/docs/Glossary/Callback_function</a>
+<script src = "Callbacks.js"></script>
+</body>
+</html>
