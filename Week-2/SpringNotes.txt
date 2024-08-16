@@ -1,0 +1,240 @@
+
+Spring Notes
+
+	Spring
+		- Lightweight Java Framework
+		- Allows us to make Enterprise level Web Applications quicker and
+		more effectively
+		- Very Modular (with Modules like):
+			- Spring MVC, Spring Data JPA, Spring ORM, Spring Test, Spring REST
+		- often handles infrastructure so you don't have to.
+			- Spring Boot App, Tomcat will be embedded into our project.
+
+	Spring Core
+		- Spring Container
+			- The core the Spring Framework
+			- Creates and configures your objects for you.
+			- manages the lifecycle of your objects.
+
+
+		- Your application lives within this container.
+		- In Java Code, this Spring Container is as the ApplicationContext
+			- Spring IOC Container
+			- IOC Container
+			- IOC -> Inversion of Control
+
+		- ApplicationContext (vs BeanFactory)
+			- Spring provides two Spring Containers. The first one was BeanFactory (XMLBeanFactory)
+			that was capabale of instantiating and wiring beans. Lightweight.
+				- Provides the configuration for the framework and basic functionality.
+			- ApplicationContext, a sub-interface of BeanFactory that offered additional features
+			such as support for Spring AOP or Annotation Based Support.
+				- adds more enterprise-specific functionality for managing the creation and lifecyle
+				of objects within the app.
+			- The implementation of ApplicationContext we will use is called: AnnotationConfigApplicationContext
+				- This is an implementation of ApplicationContext suitable for Annotation based configuration.
+
+		- The Container manages all of our Objects (such as our Model, and more), creation, deletion, dependency injection.
+
+
+		- Dependency Injection
+			- Problem: Your classes should not be responsible for creating and managing other objects it needs.
+			- We want to remove a Class's reliance on managing other Objects.
+
+			- Software design pattern wherein we decouple (loosen the coupling) the objects/dependencies 
+			from a Class by removing the requirement of that class of having to create or manage them.
+			- A Class is NOT responsible for fulfilling its dependencies rather an Injector
+			will provide the appropriate dependency when they are needed.
+
+			
+			- Types of Dependency Injection
+				- Constructor Injection - Spring providing the values needed for a Class's dependencies in the constructor
+				- Setter Injection - Spring will set the values of the dependencies using a setter method.
+				- Field Injection - providing the dependency through the field using Reflection API (Annotation). 
+				Heavily debated on its usefulness and safety.
+
+		- If we use Spring right, we won't have much need for the 'new' keyword because Spring will be responsible for the creation of our Objects.
+			- Java Based Configuration -> you will see us use the 'new' keyword, but Spring will still be controlling if that object even gets created.
+
+		
+	
+	- Spring Bean
+		- A Class/Object whose life and management within the program is controlled by the Spring Container (ApplicationContext)
+
+		- Scopes for Spring Beans
+			- Singleton	- 1 instance per ApplicationContext (Spring Container)
+			- Prototype	- As many instances as you want.
+			- Request	- 1 Bean per HttpRequest
+			- Session	- 1 Bean per HttpSession
+			- GlobalSession	- Scoped per Portlet
+
+		- All Beans default to the Singleton Scope, in which there will only be 1 instance of the bean ever (within that AC).
+			- When that is that case, your ApplicationContext will go ahead and instantiate that 1 Singleton Bean upon startup.
+			- @Scope - to tell Spring what Scope we want our bean to be in.
+
+
+
+
+	Spring Bean Lifecycle
+	
+	- Lifecycle of the Spring Container for managing our Spring Beans
+
+	- Instantiation of the Bean
+	- Properties are set
+	- BeanNameAware - setBeanAware() - Any associated interfaces or objects are made aware of the bean's existence
+	- BeanFactoryAware - setBeanFactory() - The bean is aware of any associated interfaces as well.
+	- Additional methods, can be custom created methods, are invoked.
+		- Bean Post Processing
+		- Custom Init Methods
+		- After Properties Set - after properties have been set and satisfied Aware methods.
+		- Post Initialization
+
+	- Bean is Ready to be Used.
+	
+
+	- Bean no longer used/needed OR Shutdown of the ApplicationContext
+		- PreDestroy - custom methods to execute upon destruction of a Bean
+		- Destroy - Bean is destroyed.
+
+
+
+-------------------------------------------------
+
+
+Spring Boot
+
+	- Opinionated Spring Framework Project which provides for RAD (Rapid Application Development)
+	- Makes it easier to create a stand-alone, production-grade, Spring-based application
+	that you can simply "just run".
+	- Opinionated - Spring Boot will have a set of 'starter' dependencies and configurations to
+	simplify decision making. Can be modified.
+	- This will help in the process of abstracting away a lot of our work.
+
+	Benefits:
+	- Easy to understand and develop Spring Applicaitons
+	- Increases productivity
+	- Reduces Development Time
+	- We get to abstract away quite a few concepts within our applicaiton
+		- Spring Core
+		- JDBC - Hibernate -> Spring Data JPA
+	- Embedded Tomcat Server
+		- Tomcat -> Just a Web Server for hosting our application
+		
+
+
+	- Spring Projects vs Modules
+
+	- Projects:
+		- Spring Boot (Actuator)
+		- Spring Data
+		- Spring Cloud
+
+	- Modules:
+		- Spring Test
+		- Spring MVC (Web)
+		- Spring REST
+		- Spring Data JPA
+		- Spring ORM
+		- Spring AOP
+
+
+
+Stereotype
+		- Annotation denoting the roles or methods in the overall architecture for a Class.
+		- Tells Spring what that Class is going to be used for.
+
+		- @Component - denotes to Spring that the Class should be managed by Spring.
+			- @Controller
+			- @Service
+			- @Repository
+			- @Configuration
+
+			- Configuration Class is used when creating our ApplicationContext (Spring IOC Container) and denotes
+			how to create and manage our beans.
+				- @Bean - to tell Spring that a method returns a Bean and describes how to manage said bean.
+
+
+Annotation-based Configuration:
+	- @Autowired - Allows us to mark a field as needed to be injected (automatically wired to) - Can placed
+	in any appropriate spot for a type of Dependency Injection
+
+
+
+
+--------------------------------
+
+
+Spring MVC
+
+	- A Module for creating Spring *Web* Applications
+	- It abstracts away the use of Servlets by utilizing the DispatcherServlet
+	as a front controller to our applicaiton for accepting and sending HTTP Requests/Responses.
+
+	- In our Proejcts we will add a module called: Spring Web
+		- This is a combination of Spring MVC and Spring REST
+
+	- Makes heavy use of Annotations. Most of the work to achieve what SPring MVC needs to achieve is
+	by applying the correct Annotation.
+
+	- @ResponseBody
+	- @RequestMapping
+	- @RestController
+	- @PathParam
+	- @RequestBody
+
+
+----------------------------------
+
+
+Spring Data JPA
+
+	- JPA -> Java (Jakarta) Persistance API - set of standards for Java ORM Frameworks to follow.
+	- ORM Framework -> Object Relational Mapping Framework - helps to serve us by bridging the
+	gap between two incompatible Data Systems, such as a Java Class (Models) and Database Tables.
+		- Hibernate - ORM Framework for Java. Abstract away JDBC (No manual use of its interfaces).
+			- Greatly simplifies the SQL Code that we have to write to execute a query.
+			- has alternative syntaxes such as HQL or Criteria
+			- uses methods that are more generalized and can take in any object that it
+			manages/persists.
+				- get(id); -> get you a resource with a particular id.
+			
+
+	- Spring Data JPA - abstracts away the use of Hibernate into our Spring App.
+	- There is still the use of JPA Annotations -> JPA annotations are used by all Java ORMs - that follow the JPA guidelines.
+
+
+	- A module for persisting information to a database.
+	- Utilizes Repositories to create, read, update, and delete information.
+	- It, like most Spring modules, makes heavy use of Annotations.
+
+	- Setting up Spring Data JPA:
+		- Add the module / dependency
+		- Add DB Configuration info into the application (application.properties)
+		- Create and Annotate our Models using JPA Annotations
+		- Create a Repo (interface) that extends CrudRepository / JpaRepository and marking with @Repository
+		- In the Main Class:
+			- @EntityScan - to tell Spring Data JPA where to find the entities (models)
+			- @EnableJpaRepositories - to tell Spring 1) where the repositories are 
+			2) that Spring Data will handle the implementation of the repos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
