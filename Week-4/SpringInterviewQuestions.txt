@@ -1,0 +1,22 @@
+Spring Core
+1.	What is the Spring Framework, and what are its core features?
+2.	Can you explain the concept of Dependency Injection (DI) and how it is implemented in Spring?
+3.	What is the difference between @Component, @Service, @Repository, and @Controller annotations?
+4.	How does the Spring IoC container work, and what is the role of ApplicationContext?
+
+Spring Boot
+6.	What is Spring Boot, and how does it differ from the traditional Spring Framework?
+7.	How does Spring Boot achieve auto-configuration, and how can you customize it?
+8.	What is the purpose of the application.properties or application.yml file in a Spring Boot project?
+9.	Explain the role of SpringApplication.run() in a Spring Boot application.
+
+Spring Data
+11.	What is Spring Data JPA, and how does it simplify data access?
+12.	Can you explain the purpose of CrudRepository, JpaRepository, and PagingAndSortingRepository in Spring Data JPA?
+13.	How do you define custom queries using the @Query annotation in Spring Data JPA?
+14.	What are the benefits of using Spring Data repositories over traditional DAO patterns?
+15.	Explain how Spring Data handles transaction management and the use of @Transactional annotation.
+
+Spring Web
+16.	How does Spring MVC handle form submissions and validation?
+17.	What is the role of @RestController and how does it differ from @Controller?
