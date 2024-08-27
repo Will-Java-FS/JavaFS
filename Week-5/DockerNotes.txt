@@ -1,0 +1,22 @@
+on local
+
+1. podman build -t springmovieapp1 .
+2. podman images
+3. podman run -d -p 8080:8080 -e DB_URL=jdbc:postgresql://localhost:5432/test1 -e DB_PASSWORD=p4ssword -e ADDRESS=localhost -e SCHEMA=testtable1 localhost/springmovieapp1
+4. podman ps
+5. podman ps -a --format "{{.ID}} {{.Names}}"
+6. podman save -o springmovie1.tar localhost/springmovieapp1
+
+7. sudo scp -i ~/.ssh/aug26train.pem /mnt/c/Users/WilliamTerry/Desktop/JavaTraining/JavaFS/Week-5/SpringMovieApp1/springmovie1.tar ec2-user@awscomputePublicIPv4DNS
+
+-------------------------------------
+on ec2
+
+1. sudo yum -y update
+2. sudo yum install -y docker
+3. sudo service docker start
+4. sudo usermod -aG docker ec2-user
+5. sudo docker load -i springmovieapp1.tar
+
+
+
