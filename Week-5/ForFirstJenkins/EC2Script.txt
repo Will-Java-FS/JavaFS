@@ -1,0 +1,51 @@
+#Install Maven
+sudo yum install -y maven
+
+#Install git
+sudo yum install -y git
+
+#Get RevOps from s3 bucket
+wget https://adammisc.s3.us-east-2.amazonaws.com/RevOps.tar.gz
+
+#Unzip RevOps.tar.gz
+tar xzvf RevOps.tar.gz
+
+#removes tar file
+rm RevOps.tar.gz
+
+#Make sure we have the later version of Jenkins
+wget https://updates.jenkins-ci.org/stable/latest/jenkins.war
+
+#Have execute permission on this file
+chmod 700 jenkins.war
+
+#Navigate into the webapps folder of Tomcat
+cd RevOps/apache-tomcat-9.0.20/webapps
+
+#Remove the potentially outdated Jenkins
+rm jenkins.war
+
+#Move in the newly downloaded Jenkins
+mv /home/ec2-user/jenkins.war .
+
+#Start Up Tomcat
+/home/ec2-user/RevOps/apache-tomcat-9.0.20/bin/startup.sh
+
+#get initial admin password; takes time to generate
+#cat /home/ec2-user/.jenkins/secrets/initialAdminPassword
+
+
+
+
+
+#For automating the process of packaging and deploying the application
+cd /home/ec2-user/.jenkins/workspace/firstjob
+#Package Project
+mvn clean package
+cd target/
+#Make jar file executable
+chmod 700 JavaApp-1.0-SNAPSHOT.jar
+#Run the jar file.
+java -jar JavaApp-1.0-SNAPSHOT.jar
+#maybe put in && or nohup here
+# We might need to modify the command to run in the background.
